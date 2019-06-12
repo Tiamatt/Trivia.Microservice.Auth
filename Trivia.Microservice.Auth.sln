@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia.Microservice.Auth.Api", "Trivia.Microservice.Auth.Api\Trivia.Microservice.Auth.Api.csproj", "{1592A60C-B1DB-42D2-B794-C2C1C22473F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Contracts", "Auth.Contracts\Auth.Contracts.csproj", "{FF4678D4-6E5E-4B2D-8620-EA222A64F42C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.DataAccess", "Auth.DataAccess\Auth.DataAccess.csproj", "{C1E5E0A5-86B3-4F97-839F-7E5BB7095305}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Api", "Auth.Api\Auth.Api.csproj", "{D9F2F4C6-ED39-4ED8-98CA-6C6476CCEB63}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{899A0578-ED81-4010-8E04-D6DBDD0A3887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1592A60C-B1DB-42D2-B794-C2C1C22473F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1592A60C-B1DB-42D2-B794-C2C1C22473F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1592A60C-B1DB-42D2-B794-C2C1C22473F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1592A60C-B1DB-42D2-B794-C2C1C22473F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4678D4-6E5E-4B2D-8620-EA222A64F42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4678D4-6E5E-4B2D-8620-EA222A64F42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4678D4-6E5E-4B2D-8620-EA222A64F42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4678D4-6E5E-4B2D-8620-EA222A64F42C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E5E0A5-86B3-4F97-839F-7E5BB7095305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E5E0A5-86B3-4F97-839F-7E5BB7095305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E5E0A5-86B3-4F97-839F-7E5BB7095305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E5E0A5-86B3-4F97-839F-7E5BB7095305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9F2F4C6-ED39-4ED8-98CA-6C6476CCEB63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F2F4C6-ED39-4ED8-98CA-6C6476CCEB63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F2F4C6-ED39-4ED8-98CA-6C6476CCEB63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F2F4C6-ED39-4ED8-98CA-6C6476CCEB63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899A0578-ED81-4010-8E04-D6DBDD0A3887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899A0578-ED81-4010-8E04-D6DBDD0A3887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899A0578-ED81-4010-8E04-D6DBDD0A3887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899A0578-ED81-4010-8E04-D6DBDD0A3887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
