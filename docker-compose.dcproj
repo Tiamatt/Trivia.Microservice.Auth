@@ -17,6 +17,7 @@
     <None Include=".dockerignore" />
     <None Include="Dockerfile" />
     <None Include="README.md" />
+    <None Include="RestartDockerContainer.ps1" />
     <None Include="Trivia.Microservice.Auth.sln" />
   </ItemGroup>
 </Project>

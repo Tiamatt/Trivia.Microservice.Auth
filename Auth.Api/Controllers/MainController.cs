@@ -15,7 +15,7 @@ namespace Auth.Api.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "main1", "main2" };
+            return new string[] { "main111", "main222" };
         }
 
         // GET: api/Main/5
