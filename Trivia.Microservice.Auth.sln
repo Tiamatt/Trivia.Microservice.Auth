@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Api", "Auth.Api\Auth.A
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{899A0578-ED81-4010-8E04-D6DBDD0A3887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Migration", "Auth.Migration\Auth.Migration.csproj", "{3708C21B-29C7-418B-8415-7C53AAF7DA04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Migration", "Auth.Migration\Auth.Migration.csproj", "{3708C21B-29C7-418B-8415-7C53AAF7DA04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Manager", "Auth.Manager\Auth.Manager.csproj", "{8A8724AB-9EA0-4874-B5CE-4AF06FD98541}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3708C21B-29C7-418B-8415-7C53AAF7DA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3708C21B-29C7-418B-8415-7C53AAF7DA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3708C21B-29C7-418B-8415-7C53AAF7DA04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A8724AB-9EA0-4874-B5CE-4AF06FD98541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8724AB-9EA0-4874-B5CE-4AF06FD98541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8724AB-9EA0-4874-B5CE-4AF06FD98541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8724AB-9EA0-4874-B5CE-4AF06FD98541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
