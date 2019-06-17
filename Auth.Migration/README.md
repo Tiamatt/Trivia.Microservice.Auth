@@ -1,5 +1,6 @@
 ﻿## Preparations
-1. Create new Trivia.AuthDb database in SQL Server
+1. Create new 'Trivia.AuthDb' database in SQL Server
+3. Create new 'TriviaAuthDb_Admin' login with 'db_owner' and 'public' role membership for 'Trivia.AuthDb'
 
 ## How to run migration
 1. Set "Auth.Migration" as a StartUp project
