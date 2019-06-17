@@ -10,3 +10,5 @@
 ## Note
 1. If for some reasons you need to make your migration script run again, then
 remove target version from [dbo].[VersionInfo] table and run "Auth.Migration" again
+2. "Auth.Migration" project has it's own "appsettings.json" file with "ConnectionString" property
+Make sure you are pointing to correct database

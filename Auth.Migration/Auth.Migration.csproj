@@ -8,8 +8,19 @@
   <ItemGroup>
     <PackageReference Include="FluentMigrator" Version="3.2.1" />
     <PackageReference Include="FluentMigrator.Runner" Version="3.2.1" />
-    <PackageReference Include="FluentMigrator.Runner.SQLite" Version="3.2.1" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="2.2.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+	<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SqlScripts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

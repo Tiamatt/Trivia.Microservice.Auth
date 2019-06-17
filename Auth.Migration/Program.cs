@@ -1,6 +1,6 @@
 ﻿using System;
+using System.IO;
 using FluentMigrator.Runner;
-using FluentMigrator.Runner.Initialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,14 +8,19 @@ namespace Auth.Migration
 {
     class Program
     {
-        public IConfiguration Configuration { get; }
-
         static void Main(string[] args)
         {
-            var serviceProvider = CreateServices();
+            // Build configuration from "appsettings.json"
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-            // Put the database update into a scope to ensure
-            // that all resources will be disposed.
+            IConfigurationRoot configuration = builder.Build();
+
+            // Create services
+            var serviceProvider = CreateServices(configuration);
+
+            // put the database update into a scope to ensure that all resources will be disposed.
             using (var scope = serviceProvider.CreateScope())
             {
                 UpdateDatabase(scope.ServiceProvider);
@@ -23,21 +28,20 @@ namespace Auth.Migration
         }
 
         // Configure the dependency injection services
-        private static IServiceProvider CreateServices()
+        private static IServiceProvider CreateServices(IConfigurationRoot configuration)
         {
-            // kali - move to app settings
-            string connectionString = "Server=DESKTOP-O93KUA7\\SQLEXPRESS;Database=Trivia.AuthDb;User Id=TriviaAuthDb_Admin;Password=Tr1v1a20!9;Trusted_Connection=True;";
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
 
             return new ServiceCollection()
                 // Add common FluentMigrator services
                 .AddFluentMigratorCore()
                 .ConfigureRunner(rb => rb
-                    // Add SQLite support to FluentMigrator
+                    // Add SQL Server support to FluentMigrator
                     .AddSqlServer()
                     // Set the connection string
                     .WithGlobalConnectionString(connectionString)
                     // Define the assembly containing the migrations
-                    .ScanIn(typeof(CreateTable_test).Assembly).For.Migrations()) // kali - make it dynamic
+                    .ScanIn(typeof(InitialMigration).Assembly).For.Migrations()) // 20190616000000_InitialMigration.cs
                 // Enable logging to console in the FluentMigrator way
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 // Build the service provider
