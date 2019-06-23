@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth.Api.Helpers;
+using Auth.Contracts;
+using Auth.Contracts.Helpers;
+using Auth.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,8 +35,15 @@ namespace Auth.Api
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "Trivia.Microservice.Auth API", Version = "v1.0" });
             });
+
+            // Add config file
+            services.AddOptions().Configure<AuthConfig>(Configuration.GetSection(nameof(AuthConfig)));
+
+            // Add all dependency injections
+            services.AddSingleton<IMainDataAccess, MainDataAccess>();
+            services.AddSingleton<IMainHelper, MainHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

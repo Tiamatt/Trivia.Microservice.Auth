@@ -4,6 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Auth.Contracts;
+using ApiModels = Auth.Contracts.ApiModels;
+using Auth.Api.Helpers;
+using Auth.Contracts.Helpers;
+using Auth.Contracts.ApiModels;
 
 namespace Auth.Api.Controllers
 {
@@ -11,36 +16,27 @@ namespace Auth.Api.Controllers
     [ApiController]
     public class MainController : ControllerBase
     {
-        // GET: api/Main
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IMainHelper _mainHelper;
+
+        public MainController(IMainHelper mainHelper)
         {
-            return new string[] { "main111", "main222" };
+            _mainHelper = mainHelper;
         }
 
-        // GET: api/Main/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+
+        [HttpGet("/api/main/GetLoginTypes/{isActive}")]
+        public ActionResult<GetLoginTypesResponse> GetLoginTypes(bool? isActive)
         {
-            return "main";
+            try
+            {
+                var result = _mainHelper.GetLoginTypes(isActive);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex);
+            }
         }
 
-        // POST: api/Main
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT: api/Main/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
