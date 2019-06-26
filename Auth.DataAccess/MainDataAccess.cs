@@ -27,7 +27,7 @@ namespace Auth.DataAccess
             {
                 string query = @"
                     SELECT * FROM dbo.loginType 
-                    WHERE(isActive IS NULL OR isActive = @IsActive)
+                    WHERE(@IsActive IS NULL OR isActive = @IsActive)
                 ";
                 var results = db.Query<loginType>(query, new { IsActive = isActive }).ToList();
                 return (results.Count > 0) ? results : null;

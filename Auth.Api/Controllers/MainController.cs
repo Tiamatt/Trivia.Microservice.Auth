@@ -23,8 +23,12 @@ namespace Auth.Api.Controllers
             _mainManager = mainManager;
         }
 
+        /* Call examples:
+        B) http://localhost:62450/api/main/GetLoginTypes
+        A) http://localhost:62450/api/main/GetLoginTypes?isActive=true 
+        */
 
-        [HttpGet("/api/main/GetLoginTypes/{isActive}")]
+        [HttpGet("GetLoginTypes")]
         public ActionResult<GetLoginTypesResponse> GetLoginTypes(bool? isActive)
         {
             try
