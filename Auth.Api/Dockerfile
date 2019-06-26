@@ -9,7 +9,6 @@ WORKDIR /src
 COPY ["Auth.Api/Auth.Api.csproj", "Auth.Api/"]
 COPY ["Auth.Contracts/Auth.Contracts.csproj", "Auth.Contracts/"]
 COPY ["Auth.DataAccess/Auth.DataAccess.csproj", "Auth.DataAccess/"]
-COPY ["Auth.Manager/Auth.Manager.csproj", "Auth.Manager/"]
 COPY ["Auth.Migration/Auth.Migration.csproj", "Auth.Migration/"]
 RUN dotnet restore "Auth.Api/Auth.Api.csproj"
 COPY . .

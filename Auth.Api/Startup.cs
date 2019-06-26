@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Auth.Api.Helpers;
+using Auth.Api.Managers;
 using Auth.Contracts;
-using Auth.Contracts.Helpers;
+using Auth.Contracts.Managers;
 using Auth.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,7 +43,7 @@ namespace Auth.Api
 
             // Add all dependency injections
             services.AddSingleton<IMainDataAccess, MainDataAccess>();
-            services.AddSingleton<IMainHelper, MainHelper>();
+            services.AddSingleton<IMainManager, MainManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

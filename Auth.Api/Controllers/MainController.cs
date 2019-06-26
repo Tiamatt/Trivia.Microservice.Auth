@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Auth.Contracts;
 using ApiModels = Auth.Contracts.ApiModels;
-using Auth.Api.Helpers;
-using Auth.Contracts.Helpers;
+using Auth.Api.Managers;
+using Auth.Contracts.Managers;
 using Auth.Contracts.ApiModels;
 
 namespace Auth.Api.Controllers
@@ -16,11 +16,11 @@ namespace Auth.Api.Controllers
     [ApiController]
     public class MainController : ControllerBase
     {
-        private readonly IMainHelper _mainHelper;
+        private readonly IMainManager _mainManager;
 
-        public MainController(IMainHelper mainHelper)
+        public MainController(IMainManager mainManager)
         {
-            _mainHelper = mainHelper;
+            _mainManager = mainManager;
         }
 
 
@@ -29,11 +29,12 @@ namespace Auth.Api.Controllers
         {
             try
             {
-                var result = _mainHelper.GetLoginTypes(isActive);
+                var result = _mainManager.GetLoginTypes(isActive);
                 return Ok(result);
             }
             catch (Exception ex)
             {
+                //TODO kali - log error
                 return StatusCode(500, ex);
             }
         }

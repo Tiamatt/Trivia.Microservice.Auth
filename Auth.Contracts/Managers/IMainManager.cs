@@ -1,8 +1,8 @@
 ﻿using Auth.Contracts.ApiModels;
 
-namespace Auth.Contracts.Helpers
+namespace Auth.Contracts.Managers
 {
-    public interface IMainHelper
+    public interface IMainManager
     {
         GetLoginTypesResponse GetLoginTypes(bool? isActive);
     }

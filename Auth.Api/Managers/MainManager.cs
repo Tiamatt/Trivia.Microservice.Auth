@@ -1,16 +1,16 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using Auth.Contracts;
-using Auth.Contracts.Helpers;
+using Auth.Contracts.Managers;
 using Auth.Contracts.ApiModels;
 
-namespace Auth.Api.Helpers
+namespace Auth.Api.Managers
 {
-    public class MainHelper: IMainHelper
+    public class MainManager: IMainManager
     {
         private readonly IMainDataAccess _mainDataAccess;
 
-        public MainHelper(IMainDataAccess mainDataAccess)
+        public MainManager(IMainDataAccess mainDataAccess)
         {
             _mainDataAccess = mainDataAccess;
         }
