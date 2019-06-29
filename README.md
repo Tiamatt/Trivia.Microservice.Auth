@@ -7,4 +7,4 @@ Features:
 - FluentMigrator (v 3.2.1)
 
 Run
-- http://localhost:62450/swagger/index.html
+- http://localhost:7001/swagger/index.html

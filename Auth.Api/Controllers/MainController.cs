@@ -23,9 +23,17 @@ namespace Auth.Api.Controllers
             _mainManager = mainManager;
         }
 
+
+        // GET api/values
+        [HttpGet]
+        public ActionResult<string> Get()
+        {
+            return "Testing endpoint for Trivia.Microservice.Auth";
+        }
+
         /* Call examples:
-        B) http://localhost:62450/api/main/GetLoginTypes
-        A) http://localhost:62450/api/main/GetLoginTypes?isActive=true 
+        B) http://localhost:7001/api/main/GetLoginTypes
+        A) http://localhost:7001/api/main/GetLoginTypes?isActive=true 
         */
 
         [HttpGet("GetLoginTypes")]

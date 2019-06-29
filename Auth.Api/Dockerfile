@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-stretch-slim AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 62450
+EXPOSE 7001
 EXPOSE 1433
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
